@@ -132,3 +132,6 @@ class Availability(models.Model):
 
 class Email_Authentication(models.Model):
     tutor_email = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = 'Email Authentication'
