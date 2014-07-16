@@ -116,6 +116,9 @@ class Session(models.Model):
     reason_visited = models.CharField(max_length=50, choices=REASON_VISITED)
     visited = models.CharField(max_length=50, choices=VISITED)
 
+    def __str__(self):
+        return "{0} {1} {2}".format(self.first_name, self.last_name, self.date)
+
 class Expertise(models.Model):
     tutor_email = models.CharField(max_length=100)
     subject = models.CharField(max_length=50)
