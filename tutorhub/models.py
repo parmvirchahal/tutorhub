@@ -109,7 +109,7 @@ class Session(models.Model):
     building = models.CharField(max_length=25)
     room = models.CharField(max_length=4)
     subject = models.CharField(max_length=25, choices=CLASS)
-    instrutor = models.CharField(max_length=25)
+    instructor = models.CharField(max_length=25)
     assignment = models.CharField(max_length=100)
     grade = models.CharField(max_length=2, choices=GRADE)  
     apt_time = models.CharField(max_length=25, choices=APT_TIME)
