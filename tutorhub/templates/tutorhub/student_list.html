@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row first">
+    <div class="col-md-12">
+      <ul>
+      {% for student in object_list %}
+        <li>{{student}}</li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}

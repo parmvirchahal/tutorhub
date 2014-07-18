@@ -82,7 +82,6 @@ class Student(models.Model):
     last_name = models.CharField(max_length=25)
     phone = models.CharField(max_length=15)
     grade = models.CharField(max_length=2, choices=GRADE)
-    email = models.CharField(max_length=100)
     instructor = models.CharField(max_length=35)
 
     def __str__(self):

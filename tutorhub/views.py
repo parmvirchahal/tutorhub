@@ -21,4 +21,43 @@ class CreateSession(CreateView):
     fields = ['student_id', 'first_name', 'last_name', 'date', 'building', 'room', 'subject', 'instructor', 'assignment', 'grade', 'apt_time', 'reason_visited', 'visited']
     success_url = '/'
 
+class ListTutor(ListView):
+    model = Tutor
+
+class TutorForm(ModelForm):
+    class Meta:
+        model = Tutor
+        fields = ['user', 'tutor_email', 'first_name', 'last_name', 'phone', 'picture']
+
+class CreateTutor(CreateView):
+    model = Tutor
+    fields = ['user', 'tutor_email', 'first_name', 'last_name', 'phone', 'picture']
+    success_url = '/'
+
+class ListStudent(ListView):
+    model = Student
+
+class StudentForm(ModelForm):
+    class Meta:
+        model = Student
+        fields = ['user', 'student_id', 'student_email', 'first_name', 'last_name', 'phone', 'grade', 'instructor']
+
+class CreateStudent(CreateView):
+    model = Student
+    fields = ['user', 'student_id', 'student_email', 'first_name', 'last_name', 'phone', 'grade', 'instructor']
+    success_url = '/'
+
+class ListInstructor(ListView):
+    model = Instructor
+
+class InstructorForm(ModelForm):
+    class Meta:
+        model = Instructor
+        fields = ['user', 'instructor_email', 'first_name', 'last_name', 'phone', 'classes', 'building', 'room']
+
+class CreateInstructor(CreateView):
+    model = Instructor
+    fields = ['user', 'instructor_email', 'first_name', 'last_name', 'phone', 'classes', 'building', 'room']
+    success_url = '/'
+
 # Create your views here.
