@@ -114,6 +114,7 @@ class Session(models.Model):
     apt_time = models.CharField(max_length=25, choices=APT_TIME)
     reason_visited = models.CharField(max_length=50, choices=REASON_VISITED)
     visited = models.CharField(max_length=50, choices=VISITED)
+    completion = models.BooleanField(default=False)
 
     def __str__(self):
         return "{0} {1} {2}".format(self.first_name, self.last_name, self.date)
