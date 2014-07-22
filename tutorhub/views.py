@@ -18,7 +18,7 @@ class SessionForm(ModelForm):
 
 class CreateSession(CreateView):
     model = Session
-    fields = ['student_id', 'first_name', 'last_name', 'date', 'building', 'room', 'subject', 'instructor', 'assignment', 'grade', 'apt_time', 'reason_visited', 'visited']
+    fields = ['student_id', 'first_name', 'last_name', 'date', 'building', 'room', 'subject', 'instructor', 'assignment', 'grade', 'apt_time', 'reason_visited', 'visited', 'completion']
     success_url = '/'
 
 class ListTutor(ListView):
