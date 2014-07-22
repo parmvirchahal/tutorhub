@@ -118,6 +118,12 @@ class Session(models.Model):
     def __str__(self):
         return "{0} {1} {2}".format(self.first_name, self.last_name, self.date)
 
+class Apt_Time(models.Model):
+    block = models.CharField(max_length=25)
+    
+    def __str__(self):
+        return self.block
+
 class Expertise(models.Model):
     tutor_email = models.CharField(max_length=100)
     subject = models.CharField(max_length=50)
@@ -126,8 +132,9 @@ class Expertise(models.Model):
         verbose_name_plural = "Expertise"
 
 class Availability(models.Model):
-    tutor_email = models.CharField(max_length=100)
-    date = models.DateField()
+    tutor = models.ForeignKey(Tutor, null=True)
+    date = models.DateField('absent', null=True)
+    blocks = models.ForeignKey(Apt_Time, null=True)
 
     class Meta:
         verbose_name_plural = "Availabilities"
