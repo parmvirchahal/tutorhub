@@ -60,4 +60,14 @@ class CreateInstructor(CreateView):
     fields = ['user', 'instructor_email', 'first_name', 'last_name', 'phone', 'classes', 'building', 'room']
     success_url = '/'
 
+class ReflectionForm(ModelForm):
+    class Meta:
+        model = Reflection
+        fields = ['session', 'student', 'tutor', 'instructor', 'reflection']
+
+class CreateReflection(CreateView):
+    model = Reflection
+    fields = ['session', 'student', 'tutor', 'instructor', 'reflection']
+    success_url = '/'
+
 # Create your views here.

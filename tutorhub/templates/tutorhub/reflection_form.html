@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row first">
+    <div class="col-md-12">
+      <form action="/create-reflection/" enctype="multipart/form-data" method="post">{% csrf_token %}
+      {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+      {% endfor %}
+      {% for field in form.visible_fields %}
+        <div class="fieldWrapper">
+        {{ field.label_tag }} {{ field }}
+        {% if field.errors %}
+          <div class="alert alert-error">
+            <strong>{% for error in field.errors %}{{ error }}{% endfor %}</strong>
+          </div>
+        {% endif %}
+        </div>
+      {% endfor %}
+        <p><input type="submit" value="Submit" /></p>
+      </form>
+    </div>
+  </div>
+  <script language="JavaScript" type="text/javascript">
+    window.onbeforeunload = confirmExit;
+    function confirmExit()
+    var x = document.forms.value;
+    if (x==null || x=="") {
+    return "It looks like you haven't completed this form yet. If you leave this form without completing it now, you wil never be able to complete it again. We don't want you to be in that situation now do we?";
+    return false;
+    }
+  </script>
+{% endblock %}

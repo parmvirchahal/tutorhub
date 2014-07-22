@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     url(r'^list-student/', ListStudent.as_view(template_name="tutorhub/student_list.html")),
     url(r'^NE3zZmVO2Xcreate-instructor/', CreateInstructor.as_view(template_name="tutorhub/instructor_form.html")),
     url(r'^list-instructor', ListInstructor.as_view(template_name="tutorhub/instructor_list.html")),
+    url(r'^create-reflection/', CreateReflection.as_view(template_name="tutorhub/reflection_form.html")),
 )

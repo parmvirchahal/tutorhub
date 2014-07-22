@@ -144,3 +144,13 @@ class Email_Authentication(models.Model):
 
     class Meta:
         verbose_name = 'Email Authentication'
+
+class Reflection(models.Model):
+    session = models.ForeignKey(Session, null=True)
+    student = models.ForeignKey(Student, null=True)
+    tutor = models.ForeignKey(Tutor, null=True)
+    instructor = models.ForeignKey(Instructor, null=True)
+    reflection = models.TextField()
+
+    def __str__(self):
+        return self.session
