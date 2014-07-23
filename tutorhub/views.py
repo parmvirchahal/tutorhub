@@ -11,7 +11,7 @@ class ListSession(ListView):
 class SessionForm(ModelForm):
     class Meta:
         model = Session
-        fields = ['student_id', 'first_name', 'last_name', 'date', 'building', 'room', 'subject', 'instructor', 'assignment', 'grade', 'apt_time', 'reason_visited', 'visited']
+        fields = ['student_id', 'first_name', 'last_name', 'date', 'building', 'room', 'subject', 'instructor', 'assignment', 'grade', 'apt_time', 'reason_visited', 'visited', 'completion']
         widgets = {
             'date': AdminDateWidget(attrs={'cols': 80, 'rows': 20}),
         }
